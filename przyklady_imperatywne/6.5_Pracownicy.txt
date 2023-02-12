@@ -1,0 +1,4 @@
+Karol Nowak;IT;Andrzej Kowalski
+Jacek Placek;Sprzedaż;Jerzy Mierzy
+Zdobysław Mieczysław;HR;Barbara Niewiara
+Karol Król;Sprzedaż;Karolina Królowa
