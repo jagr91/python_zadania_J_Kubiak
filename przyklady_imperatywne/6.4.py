@@ -4,9 +4,6 @@
 # Dodatkowo, po odczytaniu tablicy z pliku, program powinien obliczać sumę
 # liczb znajdujących się na przekątnej
 
-path = (r'D:\G\OneDrive\G\Nauka\Python\Books\python - zadania z'
-        r' programowania\przyklady_imperatywne\6.4_test.txt')
-
 
 class Tablica():
 
@@ -24,7 +21,7 @@ class Tablica():
                 else:
                     tablica[wiersz][poz] = 0
 
-        with open(path, 'w') as plik:
+        with open('6.4_test.txt', 'w') as plik:
             for wiersz in tablica:
                 for poz in wiersz:
                     plik.write(f'{poz}  ')
@@ -32,7 +29,7 @@ class Tablica():
                 plik.write('\n')
 
     def czytaj_dene_z_pliku(self):
-        with open(path, 'r') as plik:
+        with open('6.4_test.txt', 'r') as plik:
             for wiersz in plik.readlines():
                 print(wiersz, end='')
 

@@ -3,9 +3,7 @@
 
 def main():
     liczba_rekordow = int(input('Podaj liczbę pracowników do dodania: '))
-    path = (r'D:\G\OneDrive\G\Nauka\Python\Books\python - zadania z '
-            r'programowania\przyklady_imperatywne\6.5_Pracownicy.txt')
-    with open(path, 'w', encoding='utf-8') as plik:
+    with open("6.5_Pracownicy.txt", 'w', encoding='utf-8') as plik:
         for pracownik in range(liczba_rekordow):
             imie_nazwisko = input(f'Podaj imię i nazwisko '
                                   f'({pracownik + 1}/{liczba_rekordow}): ')

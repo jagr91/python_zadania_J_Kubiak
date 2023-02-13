@@ -3,12 +3,10 @@
 # imię i nazwisko pracownika
 
 dane = input('Podaj imię i nazwisko do edycji: ')
-path = (r"D:\G\OneDrive\G\Nauka\Python\Books\python - zadania z programowania"
-        r"\przyklady_imperatywne\6.5_Pracownicy.txt")
 
 
 def main():
-    with open(path, 'r', encoding='utf-8') as plik:
+    with open("6.5_Pracownicy.txt", 'r', encoding='utf-8') as plik:
         filedata = plik.readlines()
         splitlist = [i.split(';')for i in filedata]
         for item in splitlist:
@@ -25,7 +23,7 @@ def main():
                 item[2] = input("Podaj nowego przełożonego: ")
                 print(f'\nZmieniono dane pracownika {item[0]}')
                 break
-    with open(path, 'w', encoding='utf-8') as plik:
+    with open("6.5_Pracownicy.txt", 'w', encoding='utf-8') as plik:
         for item in splitlist:
             if splitlist.index(item) + 1 != len(splitlist):
                 # nie dodawaj nowej linii w ostatnim rekordzie

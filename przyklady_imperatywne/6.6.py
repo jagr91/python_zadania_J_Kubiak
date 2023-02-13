@@ -2,10 +2,8 @@
 # na ekranie komputera
 
 def main():
-    path = (r'D:\G\OneDrive\G\Nauka\Python\Books\python - zadania z '
-            r'programowania\przyklady_imperatywne\6.5_Pracownicy.txt')
     print('Oczyt z pliku Pracownicy.txt:\n')
-    with open(path, 'r', encoding='utf-8') as plik:
+    with open("6.5_Pracownicy.txt", 'r', encoding='utf-8') as plik:
         for line in plik.readlines():
             rekord = line.split(';')
             print(f'Imię i nazwisko: {rekord[0]}')

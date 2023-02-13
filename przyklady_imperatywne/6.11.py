@@ -2,15 +2,12 @@
 # obsługę prostej bazy damych opartej na rekordach, plikach tekstowych i
 # funkcjonalnym menu. Temat bazy dowolny.
 
-PLIK = (r'D:\G\OneDrive\G\Nauka\Python\Books\python - zadania z '
-        r'programowania\przyklady_imperatywne\6.11_Baza.txt')
-
 
 class Plik():
 
     def do_listy():
         lista = []
-        with open(PLIK, 'r', encoding='utf-8') as plik:
+        with open('6.11_Baza.txt', 'r', encoding='utf-8') as plik:
             for linia in plik.readlines():
                 # usuń znaki nowej linii i podziel po średniku
                 linia = linia.strip().split(';')
@@ -22,7 +19,7 @@ class Plik():
             # dodaj średniki do pliku
             rekord.insert(1, ';')
             rekord.insert(3, ';')
-        with open(PLIK, 'w', encoding='utf-8') as plik:
+        with open('6.11_Baza.txt', 'w', encoding='utf-8') as plik:
             for rekord in lista:
                 plik.writelines(rekord)
                 if lista.index(rekord) + 1 != len(lista):

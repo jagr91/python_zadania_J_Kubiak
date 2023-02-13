@@ -17,8 +17,7 @@ def main():
 
     N = 10
     suma = 0
-    path = (r'D:\G\OneDrive\G\Nauka\Python\Books\python - '
-            r'zadania z programowania\przyklady_imperatywne\6.3_test.txt')
+
     tablica = [[i for i in range(N)] for i in range(N)]
 
     for wiersz in range(N):
@@ -28,14 +27,14 @@ def main():
             else:
                 tablica[wiersz][poz] = 0
 
-    with open(path, 'w') as plik:
+    with open('6.3_test.txt', 'w') as plik:
         for wiersz in tablica:
             for poz in wiersz:
                 plik.write(f'{poz}  ')
                 suma += poz
             plik.write('\n')
 
-    with open(path, 'r') as plik:
+    with open('6.3_test.txt', 'r') as plik:
         for wiersz in plik.readlines():
             print(wiersz, end='')
 

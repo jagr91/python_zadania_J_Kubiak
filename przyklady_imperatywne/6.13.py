@@ -3,9 +3,6 @@
 
 import pickle
 
-PATH = (r'D:\G\OneDrive\G\Nauka\Python\Books\python - zadania z programowania'
-        r'\przyklady_imperatywne\6.13')
-
 
 def main():
     kraj = input('Podaj kraj\n>> ')
@@ -14,13 +11,14 @@ def main():
 
     dane_monety = [kraj, nominal, rok]
 
-    with open(PATH, 'wb') as plik:
+    with open('6.13', 'wb') as plik:
         pickle.dump(dane_monety, plik)
 
-    with open(PATH, 'rb') as plik:
+    with open('6.13', 'rb') as plik:
         dane = pickle.load(plik)
 
     print(dane)
 
 
-main()
+if __name__ == '__main__':
+    main()

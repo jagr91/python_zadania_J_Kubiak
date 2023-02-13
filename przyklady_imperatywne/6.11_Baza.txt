@@ -1,6 +1,5 @@
 Karolina Król;1977;Odra
 Barnaba Motara;1446;Iława
-Igor Wigor;1994;KS Piździszewo
 Mieczysław Zdobysław;1987;Opole
 Mariusz Opolski;1966;Łódź
 Dariusz Mariusz;1999;Kalisz

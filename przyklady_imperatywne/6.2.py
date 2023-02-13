@@ -7,9 +7,6 @@
 # czytaj_dane_z_pliku() - odczytuje dane z pliku tekstowego
 # i wyświetla na ekranie
 
-path = (r'D:\G\OneDrive\G\Nauka\Python\Books\python - zadania z programowania'
-        r'\przyklady_imperatywne\6.2_test.txt')
-
 
 class Plik():
 
@@ -19,11 +16,11 @@ class Plik():
     def zapisz_dane(self):
         self.dane = input('Podaj imię i nazwisko: ')
 
-        with open(path, 'w') as file:
+        with open('6.2_test.txt', 'w') as file:
             file.write(self.dane)
 
     def wczytaj_dane(self):
-        with open(path, 'r') as file:
+        with open('6.2_test.txt', 'r') as file:
             print(file.read())
 
 

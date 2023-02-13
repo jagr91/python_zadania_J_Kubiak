@@ -2,9 +2,6 @@
 # prostej bazy damych opartej na rekordach, plikach tekstowych i
 # funkcjonalnym menu. Temat bazy dowolny.
 
-path = (r'D:\G\OneDrive\G\Nauka\Python\Books\python - zadania z '
-        r'programowania\przyklady_imperatywne\6.10_Baza.txt')
-
 
 def utworz_rekordy():
     l_rekordow = int(input('Podaj liczbę rekordów do dodania\n>>'))
@@ -21,7 +18,7 @@ def utworz_rekordy():
 
 
 def plik_do_listy():
-    with open(path, 'r', encoding='utf-8') as plik:
+    with open('6.10_Baza.txt', 'r', encoding='utf-8') as plik:
         lista = [line.split(';') for line in plik.readlines()]
         for rekord in lista:
             for item in rekord:
@@ -36,7 +33,7 @@ def lista_do_pliku(lista: list):
         single_record = [rekord[0], ';', rekord[1], ';', rekord[2]]
         nowa_lista.append(single_record)
 
-    with open(path, 'w', encoding='utf-8') as plik:
+    with open('6.10_Baza.txt', 'w', encoding='utf-8') as plik:
         for rekord in nowa_lista:
             if len(nowa_lista) == 1:
                 for pole in rekord:
@@ -51,7 +48,7 @@ def lista_do_pliku(lista: list):
 
 
 def dodaj_do_pliku(lista):
-    with open(path, 'a', encoding='utf-8') as plik:
+    with open('6.10_Baza.txt', 'a', encoding='utf-8') as plik:
         plik.write('\n')
         for rekord in lista:
             if len(lista) == 1:
@@ -99,8 +96,6 @@ def usun():
     dane = input('Podaj imię i nazwisko do usunięcia:')
 
     for rekord in lista:
-        print(rekord[0])
-        print(dane)
         if dane == rekord[0]:
             lista.remove(rekord)
             break

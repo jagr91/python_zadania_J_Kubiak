@@ -4,14 +4,11 @@
 
 import pickle
 
-PATH = (r'D:\G\OneDrive\G\Nauka\Python\Books\python - zadania z programowania'
-        r'\przyklady_imperatywne\6.14')
-
 
 class Klub:
 
     def dodaj_klub():
-        nazwa = input('Podaj nazwę klubu: ')
+        nazwa = input('\nPodaj nazwę klubu: ')
         utorzono = input('Podaj rok utworzenia: ')
         barwy = input('Podaj barwy: ')
         www = input('Podaj ares strony www: ')
@@ -30,24 +27,27 @@ class Klub:
         for i in range(l_klubow):
             klub = Klub.dodaj_klub()
             lista.append(klub)
+        print(f'\nDodano klub(y) ({l_klubow}) do bazy.')
         return lista
 
     def edytuj_klub():
         lista = Plik.plik_do_listy()
-        nazwa = input('Podaj nazwę klubu do zmiany')
+        nazwa = input('Podaj nazwę klubu do zmiany: ').lower()
         for rekord in lista:
-            if rekord[0] == nazwa:
+            if rekord[0].lower() == nazwa:
                 indeks = lista.index(rekord)
                 nowe_dane = Klub.dodaj_klub()
                 lista[indeks] = nowe_dane
+        print('\nEdycja zakończona sukcesem')
         return lista
 
     def usun_klub():
         lista = Plik.plik_do_listy()
-        nazwa = input('Podaj nazwę klubu do zmiany')
+        nazwa = input('Podaj nazwę klubu do zmiany: ')
         for rekord in lista:
             if rekord[0] == nazwa:
                 lista.remove(rekord)
+        print(f'\nUsunięto klub {nazwa}.')
         return lista
 
 
@@ -55,7 +55,7 @@ class Plik:
 
     def plik_do_listy():
         lista = []
-        with open(PATH, 'rb') as plik:
+        with open('6.14', 'rb') as plik:
             try:
                 while True:
                     data = pickle.load(plik)
@@ -65,7 +65,7 @@ class Plik:
         return lista
 
     def do_bazy(lista):
-        with open(PATH, 'wb') as plik:
+        with open('6.14', 'wb') as plik:
             for rekord in lista:
                 pickle.dump(rekord, plik)
 
@@ -73,7 +73,7 @@ class Plik:
         print('Lista klubów:\n')
         rekord = ['Nazwa', 'Utorzono', 'Barwy', 'www', 'Stadion', 'Prezes',
                   'Trener']
-        with open(PATH, 'rb') as plik:
+        with open('6.14', 'rb') as plik:
             l_rekordow = 0
             try:
                 while True:
@@ -83,7 +83,7 @@ class Plik:
                     l_rekordow += 1
                     print('\n')
             except EOFError:
-                print(f'Koniec pliku. Łącznie rekordów: {l_rekordow}')
+                print(f'Koniec pliku. Łącznie rekordów: {l_rekordow}\n')
 
 
 def main():
